@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up | Task Manager{% endblock %}
+
+{% block content %}
+
+<div class="card" style="max-width: 500px; margin: 30px auto;">
+
+    <h2>Create Your Account</h2>
+
+    <p>Register to start managing your tasks.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <p>
+        Already have an account?
+        <a href="{% url 'login' %}">Login here</a>
+    </p>
+
+</div>
+
+{% endblock %}
